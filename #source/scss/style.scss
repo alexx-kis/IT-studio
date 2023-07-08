@@ -1,0 +1,411 @@
+@import "reset";
+@import "vars";
+@import "mixins";
+@import "fonts";
+
+html {
+	scroll-behavior: smooth;
+	font-family: Montserrat;
+}
+
+.wrapper {
+	min-height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.container {
+	max-width: 1140px;
+	padding: 0 15px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.main-heading {}
+
+.button {
+	display: block;
+	color: $white;
+	background: $blue;
+	width: 200px;
+	padding-top: 13px;
+	padding-bottom: 15px;
+	text-align: center;
+	box-shadow: 0px 0px 10px 0px #6f6f6f40;
+	border-radius: 30px;
+	transition: all .3s;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+
+.heading {
+	color: #000;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 146.28%;
+}
+
+
+
+/*==================================== HEADER ====================================*/
+/*==================================== HEADER ====================================*/
+
+.header {
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+	opacity: 0;
+	transform: translate(100px, 0);
+	animation: header-anim 1s ease .5s 1 forwards;
+
+	@keyframes header-anim {
+		from {
+			opacity: 0;
+			transform: translate(100px, 0)
+		}
+
+		to {
+			opacity: 1;
+			transform: translate(0)
+		}
+	}
+
+	&__menu {
+		display: flex;
+		justify-content: end;
+	}
+
+	&__menu-item {
+		display: flex;
+		align-items: center;
+		padding: 0 20px;
+		height: 98px;
+		position: relative;
+
+	}
+
+	&__menu-link {
+		display: block;
+		color: $white;
+		transition: all .3s;
+
+		&::after {
+			content: '';
+			display: block;
+			background: $white;
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			transition: all .3s;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		&:hover {
+			text-shadow: 0px 0px 2px rgb(0, 0, 0);
+
+			&::after {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+	}
+
+}
+
+
+/*==================================== HERO ====================================*/
+/*==================================== HERO ====================================*/
+
+.hero {
+	transition: opacity .5s;
+	background: url('../img/hero/hero-bg.jpg') 0 / cover no-repeat;
+	min-height: 100vh;
+	animation: background-anim 1s ease forwards;
+
+	@keyframes background-anim {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	.container {
+		height: 100vh;
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+	}
+
+	&__supertitle {
+		color: $white;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		margin-bottom: 20px;
+		opacity: 0;
+		transform: translate(0, -100px);
+		animation: supertitle-anim 1s ease 1s forwards;
+	}
+
+	@keyframes supertitle-anim {
+		to {
+			transform: translate(0);
+			opacity: 1;
+		}
+	}
+
+
+	&__heading {
+		color: $white;
+		text-align: center;
+		font-size: 48px;
+		font-style: normal;
+		font-weight: 800;
+		line-height: 134.09%;
+		margin-bottom: 50px;
+		max-width: 830px;
+		opacity: 0;
+		transform: translate(-100px, 0px);
+		animation: heading-anim 1s ease 1.5s forwards;
+	}
+
+	@keyframes heading-anim {
+		to {
+			transform: translate(0);
+			opacity: 1;
+		}
+	}
+
+	&__button {
+		opacity: 0;
+		transform: translate(0, 100px);
+		animation: button-anim 1s ease 2s forwards;
+	}
+
+	@keyframes button-anim {
+		to {
+			transform: translate(0);
+			opacity: 1;
+		}
+	}
+}
+
+
+/*==================================== APPS ====================================*/
+/*==================================== APPS ====================================*/
+
+.apps {
+	padding-top: 110px;
+	padding-bottom: 105px;
+
+	&__heading {
+		max-width: 740px;
+		text-align: center;
+		margin: 0 auto 50px;
+		transform: translate(0, 100px);
+		opacity: 0;
+		transition: all .5s;
+	}
+
+
+	&__text {
+		max-width: 730px;
+		margin: 0 auto 70px;
+		color: $dark-gray;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 158.47%;
+		text-align: center;
+		transform: translate(0, 100px);
+		opacity: 0;
+		transition: all .5s;
+	}
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 55px;
+	}
+
+	&__item {
+		display: flex;
+		transform: scale(0);
+		opacity: 0;
+		transition: all .5s;
+	}
+
+	&__item-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 110px;
+		height: 110px;
+		border: 1px solid $light-gray;
+		border-radius: 50%;
+		margin-right: 17px;
+	}
+
+	&__item-icon-inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid $blue;
+		width: 90px;
+		height: 90px;
+		border-radius: 50%;
+
+	}
+
+	&__item-info {
+		margin-top: 50px;
+	}
+
+	&__item-title {
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		margin-bottom: 12px;
+	}
+
+	&__item-text {
+		color: $dark-gray;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 158.47%;
+		max-width: 222px;
+	}
+
+	&__button {
+		margin: 0 auto;
+		transform: translate(0px, 100px);
+		opacity: 0;
+		transition: all 1s;
+	}
+}
+
+
+/*==================================== STANDARTS ====================================*/
+/*==================================== STANDARTS ====================================*/
+
+.standarts {
+
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-bottom: 90px;
+		position: relative;
+
+		&::after {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 1px;
+			background: $light-gray;
+			position: absolute;
+			bottom: 0px;
+		}
+	}
+
+	&__info {
+		opacity: 0;
+		transform: translate(-100px, 0);
+		transition: all .5s;
+	}
+
+	&__heading {
+		margin-bottom: 40px;
+	}
+
+	&__text {
+		color: $dark-gray;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 158.47%;
+		margin-bottom: 30px;
+		max-width: 490px;
+	}
+
+	&__link {
+		color: $blue;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		text-decoration-line: underline;
+	}
+
+	&__image {
+		opacity: 0;
+		transform: translate(100px, 0);
+		transition: all 1s 1s;
+	}
+
+	&__bottom {
+		max-width: 920px;
+		margin: 0 auto;
+		padding: 70px 0;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__card {
+		width: 100px;
+		transform: scale(0);
+		transition: all .5s;
+	}
+
+	&__card-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__card-icon {}
+
+	&__card-number {
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 146.28%;
+	}
+
+	&__card-text {
+		color: $dark-gray;
+		text-align: center;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 158.47%;
+	}
+}
+
+
+
+/*==================================== ANIMATION ====================================*/
+
+.anim-item--active {
+	transform: translate(0, 0);
+	transform: scale(1);
+	opacity: 1;
+}
