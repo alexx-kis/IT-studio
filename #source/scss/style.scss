@@ -21,7 +21,14 @@ html {
 	height: 100%;
 }
 
-.main-heading {}
+.main-heading {
+	color: $white;
+	text-align: center;
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: 134.09%;
+}
 
 .button {
 	display: block;
@@ -64,8 +71,8 @@ html {
 	position: absolute;
 	width: 100%;
 	z-index: 2;
-	opacity: 0;
-	animation: header-anim 1s ease .5s 1 forwards;
+	// opacity: 0;
+	// animation: header-anim 1s ease .5s 1 forwards;
 
 	@keyframes header-anim {
 		from {
@@ -75,7 +82,7 @@ html {
 
 		to {
 			opacity: 1;
-			transform: translate(0)
+			transform: translate(0);
 		}
 	}
 
@@ -182,12 +189,6 @@ html {
 
 
 	&__heading {
-		color: $white;
-		text-align: center;
-		font-size: 48px;
-		font-style: normal;
-		font-weight: 800;
-		line-height: 134.09%;
 		margin-bottom: 50px;
 		max-width: 830px;
 		opacity: 0;
@@ -340,6 +341,7 @@ html {
 		opacity: 0;
 		transform: translate(-100px, 0);
 		transition: all .5s;
+		margin-right: 14px;
 	}
 
 	&__heading {
@@ -357,6 +359,7 @@ html {
 	}
 
 	&__link {
+		display: block;
 		color: $blue;
 		font-size: 16px;
 		font-style: normal;
@@ -369,6 +372,9 @@ html {
 		opacity: 0;
 		transform: translate(100px, 0);
 		transition: all 1s 1s;
+		img {
+			width: 100%;
+		}
 	}
 
 	&__bottom {
@@ -464,7 +470,7 @@ html {
 	}
 
 	&__card {
-		margin-right: 10px;
+		margin-right: 16px;
 		max-width: 350px;
 		transition: all 1s;
 		transform: scale(0);
@@ -819,3 +825,9 @@ html {
 	transform: scale(1);
 	opacity: 1;
 }
+
+
+/*==================================== MEDIA ====================================*/
+/*==================================== MEDIA ====================================*/
+
+@import "media";

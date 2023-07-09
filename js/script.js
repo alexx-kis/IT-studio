@@ -37,3 +37,24 @@ if (animItems.length > 0) {
 		}
 	}
 }
+
+/*==================================== BURGER ====================================*/
+
+let burger = document.querySelector('.burger');
+let menu = document.querySelector('.header__menu');
+let links = document.querySelectorAll('.header__menu-link');
+
+
+burger.addEventListener('click', function () {
+	menu.classList.toggle('header__menu--open');
+	burger.classList.toggle('burger--open');	
+});
+
+links.forEach(function(link){
+	link.addEventListener('click', function () {
+		menu.classList.remove('header__menu--open');
+		burger.classList.remove('burger--open');	
+		
+	});
+})
+
