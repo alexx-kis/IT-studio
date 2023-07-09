@@ -48,6 +48,13 @@ html {
 	line-height: 146.28%;
 }
 
+.small-heading {
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+
 
 
 /*==================================== HEADER ====================================*/
@@ -58,7 +65,6 @@ html {
 	width: 100%;
 	z-index: 2;
 	opacity: 0;
-	transform: translate(100px, 0);
 	animation: header-anim 1s ease .5s 1 forwards;
 
 	@keyframes header-anim {
@@ -159,11 +165,15 @@ html {
 		line-height: normal;
 		margin-bottom: 20px;
 		opacity: 0;
-		transform: translate(0, -100px);
 		animation: supertitle-anim 1s ease 1s forwards;
 	}
 
 	@keyframes supertitle-anim {
+		from {
+			opacity: 0;
+			transform: translate(0, -100px);
+		}
+
 		to {
 			transform: translate(0);
 			opacity: 1;
@@ -194,13 +204,13 @@ html {
 
 	&__button {
 		opacity: 0;
-		transform: translate(0, 100px);
+		// transform: translate(0, 100px);
 		animation: button-anim 1s ease 2s forwards;
 	}
 
 	@keyframes button-anim {
 		to {
-			transform: translate(0);
+			// transform: translate(0);
 			opacity: 1;
 		}
 	}
@@ -257,7 +267,7 @@ html {
 		justify-content: center;
 		min-width: 110px;
 		height: 110px;
-		border: 1px solid $light-gray;
+		border: 1px solid $gray;
 		border-radius: 50%;
 		margin-right: 17px;
 	}
@@ -320,7 +330,7 @@ html {
 			display: block;
 			width: 100%;
 			height: 1px;
-			background: $light-gray;
+			background: $gray;
 			position: absolute;
 			bottom: 0px;
 		}
@@ -400,6 +410,407 @@ html {
 	}
 }
 
+
+/*==================================== WORKS ====================================*/
+/*==================================== WORKS ====================================*/
+
+.works {
+	padding-top: 100px;
+	background: $bg-gradient;
+	height: 512px;
+	margin-bottom: 482px;
+
+	&__top {
+		margin-bottom: 70px;
+	}
+
+	&__top-inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__heading {
+		max-width: 540px;
+		transition: all 1s;
+		transform: translate(-100px, 0px);
+		opacity: 0;
+		color: $white;
+	}
+
+	&__button {
+		transition: all 1s 1s;
+		transform: translate(100px, 0px);
+		opacity: 0;
+	}
+
+	&__body {
+		padding-bottom: 85px;
+		position: relative;
+
+		&::after {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 1px;
+			background: $gray;
+			position: absolute;
+			bottom: 0;
+		}
+	}
+
+	&__cards {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__card {
+		margin-right: 10px;
+		max-width: 350px;
+		transition: all 1s;
+		transform: scale(0);
+		opacity: 0;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__card-image {
+		margin-bottom: 30px;
+
+		img {
+			border-radius: 10px;
+		}
+	}
+
+	&__card-title {
+		margin-bottom: 30px;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+
+		span {
+			color: $blue;
+		}
+	}
+
+	&__card-text {
+		margin-bottom: 30px;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 158.47%;
+		color: $dark-gray;
+	}
+
+	&__card-link {
+		color: $blue;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		text-decoration-line: underline;
+	}
+}
+
+
+/*==================================== PROJECTS ====================================*/
+/*==================================== PROJECTS ====================================*/
+
+.projects {
+
+	padding-top: 100px;
+	padding-bottom: 130px;
+	background: $light-gray;
+
+	&__heading {
+		margin-bottom: 50px;
+		text-align: center;
+		opacity: 0;
+		transform: translate(0, -100px);
+		transition: all 1s;
+	}
+
+	&__text {
+		color: $dark-gray;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 158.47%;
+		text-align: center;
+		max-width: 730px;
+		margin: 0 auto 70px;
+		opacity: 0;
+		transform: translate(0, -100px);
+		transition: all 2s;
+	}
+
+	&__cards {
+		display: flex;
+		margin-bottom: 50px;
+	}
+
+	&__item {
+		transition: all 1s;
+		transform: scale(0);
+		overflow: hidden;
+		border-radius: 10px;
+
+		&:hover {
+			img {
+				transform: scale(1.1);
+			}
+		}
+
+		img {
+			transition: all .3s;
+		}
+
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+
+	&__button {
+		margin: 0 auto;
+		transition: all 1s;
+		transform: translate(0, 100px);
+	}
+}
+
+
+/*==================================== VIDEO ====================================*/
+/*==================================== VIDEO ====================================*/
+
+.video {
+	background: url('/img/video/video-bg.jpg') no-repeat 0 / cover;
+	padding-top: 70px;
+	height: 570px;
+	margin-bottom: 165px;
+
+	&__heading {
+		color: $white;
+		margin-bottom: 30px;
+		text-align: center;
+		transition: all 1s;
+		transform: translate(0, -100px);
+		opacity: 0;
+	}
+
+	&__subtitle {
+		color: $white;
+		margin-bottom: 70px;
+		text-align: center;
+		transition: all 2s;
+		transform: translate(0, -70px);
+		opacity: 0;
+	}
+
+	&__video {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 1s;
+		opacity: 0;
+		transform: scale(0);
+		max-width: 970px;
+		margin: 0 auto;
+
+		img {
+			width: 100%;
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			background: $gray;
+			width: 110%;
+			height: 1px;
+			position: absolute;
+			bottom: -85px;
+		}
+	}
+
+	&__button {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 300px;
+		height: 100px;
+		border-radius: 200px;
+		border: 1px solid #FFF;
+		transition: all .3s;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	&__button-icon {
+		margin-right: 20px;
+	}
+
+	&__button-text {
+		color: #fff;
+	}
+}
+
+
+/*==================================== SUBSCRIBE ====================================*/
+/*==================================== SUBSCRIBE ====================================*/
+
+.subscribe {
+	padding-top: 44px;
+	padding-bottom: 126px;
+
+	opacity: 0;
+	transform: translate(0, 200px);
+	transition: all 1s;
+
+	&__heading {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	&__text {
+		color: $dark-gray;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 158.47%;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+
+	&__form {
+		max-width: 490px;
+		height: 45px;
+		margin: 0 auto 35px;
+		border-radius: 30px;
+		border: 1px solid var(--f-2-f-2-f-2, #F2F2F2);
+		background: #FFF;
+		box-shadow: 0px 0px 10px 0px rgba(111, 111, 111, 0.25);
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__input {
+		padding-left: 33px;
+		border-radius: 30px 0 0 30px;
+
+		&::placeholder {
+			font-size: 13px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 158.47%;
+		}
+	}
+
+	&__button {
+		color: $white;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		background: $blue;
+		padding-right: 36px;
+		padding-left: 26px;
+		border-radius: 0px 30px 30px 0px;
+	}
+
+	&__subtitle {
+		color: $dark-gray;
+		font-size: 13px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 158.47%;
+		text-align: center;
+	}
+}
+
+
+/*==================================== FOOTER ====================================*/
+/*==================================== FOOTER ====================================*/
+
+.footer {
+	background: $light-gray;
+	padding-top: 70px;
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 40px;
+		position: relative;
+		transition: all 1s;
+		opacity: 0;
+		transform: translate(0, 100px);
+
+		&::after {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 1px;
+			background: $dark-gray;
+			position: absolute;
+			bottom: 0px;
+		}
+	}
+
+	&__column {
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+	}
+
+	&__heading {
+		margin-bottom: 35px;
+	}
+
+	&__list {}
+
+	&__item {
+		display: flex;
+		margin-bottom: 30px;
+		transition: all .5s;
+
+	}
+
+
+	&__item-link {
+		display: flex;
+		color: $dark-gray;
+
+		&:hover {
+			color: $blue;
+
+			.footer__item-icon {
+				svg path {
+					fill: $blue;
+				}
+			}
+		}
+	}
+
+	&__item-icon {
+		display: flex;
+		align-items: center;
+		margin-right: 16px;
+	}
+
+	&__item-text {}
+
+	&__copyright {
+		padding: 30px 0;
+		text-align: center;
+		color: $dark-gray;
+		transition: all 1s;
+		transform: translate(0, 50px);
+		opacity: 0;
+	}
+}
 
 
 /*==================================== ANIMATION ====================================*/
