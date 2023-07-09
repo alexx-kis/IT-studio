@@ -35,6 +35,7 @@ html {
 	color: $white;
 	background: $blue;
 	width: 200px;
+	min-width: 100px;
 	padding-top: 13px;
 	padding-bottom: 15px;
 	text-align: center;
@@ -421,13 +422,14 @@ html {
 /*==================================== WORKS ====================================*/
 
 .works {
-	padding-top: 100px;
-	background: $bg-gradient;
-	height: 512px;
-	margin-bottom: 482px;
-
+	// background-size: 50%;
+	margin-bottom: 60px;
+	
 	&__top {
-		margin-bottom: 70px;
+		background: $bg-gradient no-repeat;
+		padding-top: 100px;
+		height: 512px;
+		// margin-bottom: 70px;
 	}
 
 	&__top-inner {
@@ -447,12 +449,20 @@ html {
 	&__button {
 		transform: translate(100px, 0px);
 		opacity: 0;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 
 	&__body {
+		margin-top: -240px;
 		padding-bottom: 85px;
+		
+	}
+	
+	&__cards {
+		display: flex;
+		justify-content: space-between;
 		position: relative;
-
 		&::after {
 			content: '';
 			display: block;
@@ -460,13 +470,8 @@ html {
 			height: 1px;
 			background: $gray;
 			position: absolute;
-			bottom: 0;
+			bottom: -30px;
 		}
-	}
-
-	&__cards {
-		display: flex;
-		justify-content: space-between;
 	}
 
 	&__card {
@@ -571,11 +576,16 @@ html {
 
 		img {
 			transition: all .3s;
+			width: 100%;
 		}
 
 		&:not(:last-child) {
 			margin-right: 30px;
 		}
+	}
+
+	&__item-link {
+		display: block;
 	}
 
 	&__button {
@@ -590,7 +600,7 @@ html {
 /*==================================== VIDEO ====================================*/
 
 .video {
-	background: url('../img/video/video-bg.jpg') no-repeat 0 / cover;
+	background: url('../img/video/video-bg.jpg') no-repeat center / cover;
 	padding-top: 70px;
 	height: 570px;
 	margin-bottom: 165px;
