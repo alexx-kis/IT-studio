@@ -308,7 +308,7 @@ html {
 		margin: 0 auto;
 		transform: translate(0px, 100px);
 		opacity: 0;
-		transition: all 1s;
+		transition: all .3s;
 	}
 }
 
@@ -439,7 +439,6 @@ html {
 	}
 
 	&__button {
-		transition: all 1s 1s;
 		transform: translate(100px, 0px);
 		opacity: 0;
 	}
@@ -575,7 +574,7 @@ html {
 
 	&__button {
 		margin: 0 auto;
-		transition: all 1s;
+		transition: all .3s;
 		transform: translate(0, 100px);
 	}
 }
@@ -585,7 +584,7 @@ html {
 /*==================================== VIDEO ====================================*/
 
 .video {
-	background: url('/img/video/video-bg.jpg') no-repeat 0 / cover;
+	background: url('../img/video/video-bg.jpg') no-repeat 0 / cover;
 	padding-top: 70px;
 	height: 570px;
 	margin-bottom: 165px;

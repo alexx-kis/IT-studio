@@ -471,9 +471,9 @@ html {
       -ms-transform: translate(0px, 100px);
           transform: translate(0px, 100px);
   opacity: 0;
-  -webkit-transition: all 1s;
-  -o-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 /*==================================== STANDARTS ====================================*/
@@ -620,9 +620,6 @@ html {
   color: #fff;
 }
 .works__button {
-  -webkit-transition: all 1s 1s;
-  -o-transition: all 1s 1s;
-  transition: all 1s 1s;
   -webkit-transform: translate(100px, 0px);
       -ms-transform: translate(100px, 0px);
           transform: translate(100px, 0px);
@@ -762,9 +759,9 @@ html {
 }
 .projects__button {
   margin: 0 auto;
-  -webkit-transition: all 1s;
-  -o-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
   -webkit-transform: translate(0, 100px);
       -ms-transform: translate(0, 100px);
           transform: translate(0, 100px);
@@ -773,7 +770,7 @@ html {
 /*==================================== VIDEO ====================================*/
 /*==================================== VIDEO ====================================*/
 .video {
-  background: url("/img/video/video-bg.jpg") no-repeat 0/cover;
+  background: url("../img/video/video-bg.jpg") no-repeat 0/cover;
   padding-top: 70px;
   height: 570px;
   margin-bottom: 165px;
