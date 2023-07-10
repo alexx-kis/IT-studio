@@ -47,14 +47,31 @@ let links = document.querySelectorAll('.header__menu-link');
 
 burger.addEventListener('click', function () {
 	menu.classList.toggle('header__menu--open');
-	burger.classList.toggle('burger--open');	
+	burger.classList.toggle('burger--open');
 });
 
-links.forEach(function(link){
+links.forEach(function (link) {
 	link.addEventListener('click', function () {
 		menu.classList.remove('header__menu--open');
-		burger.classList.remove('burger--open');	
-		
+		burger.classList.remove('burger--open');
+
 	});
 })
 
+	/*==================================== FOOTER ====================================*/
+
+	; (function () {
+		let headings = document.querySelectorAll('.footer__heading');
+		let lists = document.querySelectorAll('.footer__list');
+
+		for (let i = 0; i < headings.length; i++) {
+			headings[i].addEventListener('click', function () {
+				if (lists[i].style.maxHeight) {
+					lists[i].style.maxHeight = null;
+				} else {
+					lists[i].style.maxHeight = lists[i].scrollHeight + "px";
+				}
+			});
+		}
+
+	})();
