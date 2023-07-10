@@ -72,8 +72,8 @@ html {
 	position: absolute;
 	width: 100%;
 	z-index: 2;
-	// opacity: 0;
-	// animation: header-anim 1s ease .5s 1 forwards;
+	opacity: 0;
+	animation: header-anim 1s ease .5s 1 forwards;
 
 	@keyframes header-anim {
 		from {
@@ -373,6 +373,7 @@ html {
 		opacity: 0;
 		transform: translate(100px, 0);
 		transition: all 1s 1s;
+
 		img {
 			width: 100%;
 		}
@@ -424,7 +425,7 @@ html {
 .works {
 	// background-size: 50%;
 	margin-bottom: 60px;
-	
+
 	&__top {
 		background: $bg-gradient no-repeat;
 		padding-top: 100px;
@@ -456,13 +457,14 @@ html {
 	&__body {
 		margin-top: -240px;
 		padding-bottom: 85px;
-		
+
 	}
-	
+
 	&__cards {
 		display: flex;
 		justify-content: space-between;
 		position: relative;
+
 		&::after {
 			content: '';
 			display: block;
@@ -604,6 +606,20 @@ html {
 	padding-top: 70px;
 	height: 570px;
 	margin-bottom: 165px;
+	position: relative;
+
+	&::after {
+		content: '';
+		display: block;
+		background: $gray;
+		max-width: 1110px;
+		min-width: 85%;
+		height: 1px;
+		position: absolute;
+		bottom: -165px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 
 	&__heading {
 		color: $white;
@@ -635,16 +651,6 @@ html {
 
 		img {
 			width: 100%;
-		}
-
-		&::after {
-			content: '';
-			display: block;
-			background: $gray;
-			width: 110%;
-			height: 1px;
-			position: absolute;
-			bottom: -85px;
 		}
 	}
 

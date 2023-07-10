@@ -166,6 +166,9 @@ html {
   position: absolute;
   width: 100%;
   z-index: 2;
+  opacity: 0;
+  -webkit-animation: header-anim 1s ease 0.5s 1 forwards;
+          animation: header-anim 1s ease 0.5s 1 forwards;
 }
 @-webkit-keyframes header-anim {
   from {
@@ -786,6 +789,21 @@ html {
   padding-top: 70px;
   height: 570px;
   margin-bottom: 165px;
+  position: relative;
+}
+.video::after {
+  content: "";
+  display: block;
+  background: #E0E0E0;
+  max-width: 1110px;
+  min-width: 85%;
+  height: 1px;
+  position: absolute;
+  bottom: -165px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .video__heading {
   color: #fff;
@@ -833,15 +851,6 @@ html {
 }
 .video__video img {
   width: 100%;
-}
-.video__video::after {
-  content: "";
-  display: block;
-  background: #E0E0E0;
-  width: 110%;
-  height: 1px;
-  position: absolute;
-  bottom: -85px;
 }
 .video__button {
   position: absolute;
@@ -1138,6 +1147,9 @@ html {
     margin-right: 0;
     margin-bottom: 38px;
   }
+  .video {
+    height: 490px;
+  }
 }
 /*------------------------------ 700 ------------------------------*/
 @media (max-width: 700px) {
@@ -1152,6 +1164,9 @@ html {
   }
   .projects__item:not(:last-child) {
     margin-right: 0px;
+  }
+  .video {
+    height: 400px;
   }
 }
 /*------------------------------ 580 ------------------------------*/
@@ -1183,6 +1198,9 @@ html {
 @media (max-width: 540px) {
   .works__body {
     margin-top: -120px;
+  }
+  .video {
+    height: 330px;
   }
 }
 /*------------------------------ 480 ------------------------------*/
@@ -1283,12 +1301,20 @@ html {
   .works__body {
     margin-top: -210px;
   }
+  .video__button {
+    width: 240px;
+    height: 90px;
+  }
 }
 /*------------------------------ 424 ------------------------------*/
-.works__body {
-  margin-top: -160px;
+@media (max-width: 424px) {
+  .works__body {
+    margin-top: -160px;
+  }
+  .video {
+    height: 280px;
+  }
 }
-
 /*------------------------------ 390 ------------------------------*/
 @media (max-width: 390px) {
   .main-heading {
@@ -1296,5 +1322,15 @@ html {
   }
   .heading {
     font-size: 20px;
+  }
+  .video__button {
+    width: 225px;
+    height: 73px;
+  }
+  .video__button-icon {
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+    margin-right: 10px;
   }
 }
